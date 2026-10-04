@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SS Academy | Adult Cricket Coaching in Delhi</title>
+<meta name="description" content="SS Academy runs cricket coaching for adults 18 and above. Turf and matting nets, video analysis, Sunday league matches. Before work and after work batches. Book a free trial session.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ---------- SS Academy landing page. All classes scoped with .ssa- for WP injection ---------- */
+:root{
+  --ssa-paper:#F3F2EC;
+  --ssa-card:#FFFFFF;
+  --ssa-ink:#122A21;
+  --ssa-muted:#4C6259;
+  --ssa-line:#D9D8CC;
+  --ssa-turf:#0C3B2A;
+  --ssa-grass:#1B6B49;
+  --ssa-cherry:#A81D26;
+  --ssa-cherry-ink:#A81D26;
+  --ssa-chalk:#F3F2EC;
+  --ssa-shadow:0 1px 0 var(--ssa-line);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ssa-paper:#08201A;
+    --ssa-card:#0E2C23;
+    --ssa-ink:#E9F0EC;
+    --ssa-muted:#9FB8AD;
+    --ssa-line:#1E4536;
+    --ssa-cherry-ink:#F2757D;
+    --ssa-shadow:0 1px 0 var(--ssa-line);
+  }
+}
+:root[data-theme="dark"]{
+  --ssa-paper:#08201A;
+  --ssa-card:#0E2C23;
+  --ssa-ink:#E9F0EC;
+  --ssa-muted:#9FB8AD;
+  --ssa-line:#1E4536;
+  --ssa-cherry-ink:#F2757D;
+  --ssa-shadow:0 1px 0 var(--ssa-line);
+}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--ssa-paper);
+  color:var(--ssa-ink);
+  font-family:"Figtree","Segoe UI",Helvetica,Arial,sans-serif;
+  font-size:17px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--ssa-cherry);outline-offset:3px;border-radius:2px}
+
+.ssa-wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 22px}
+.ssa-display{font-family:"Archivo Black","Figtree",Impact,sans-serif;font-weight:400;letter-spacing:-.015em;line-height:1.02;text-transform:none}
+
+/* ---------- header ---------- */
+.ssa-bar{position:sticky;top:0;z-index:40;background:var(--ssa-turf);color:var(--ssa-chalk);border-bottom:3px solid var(--ssa-cherry)}
+.ssa-bar-in{display:flex;align-items:center;gap:16px;height:64px}
+.ssa-logo{display:flex;align-items:center;gap:10px;text-decoration:none;margin-right:auto}
+.ssa-ball{width:26px;height:26px;border-radius:50%;background:radial-gradient(circle at 32% 30%,#D4333C,#7C1116 70%);position:relative;flex:none}
+.ssa-ball::after{content:"";position:absolute;inset:0;border-radius:50%;border-top:2px dotted rgba(255,255,255,.75);transform:rotate(28deg)}
+.ssa-logo b{font-family:"Archivo Black",sans-serif;font-size:19px;letter-spacing:-.01em}
+.ssa-logo span{display:block;font-size:11px;color:#9FC9B4;letter-spacing:.04em;margin-top:-2px}
+.ssa-bar a.ssa-tel{color:#CFE6DA;text-decoration:none;font-weight:600;font-size:15px}
+.ssa-bar a.ssa-tel:hover{color:#fff}
+.ssa-btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  background:var(--ssa-cherry);color:#fff !important;text-decoration:none;
+  font-weight:700;font-size:15px;padding:12px 20px;border:0;border-radius:4px;cursor:pointer;
+  font-family:inherit;transition:background .15s ease;
+}
+.ssa-btn:hover{background:#8E151D}
+.ssa-btn-ghost{background:transparent;border:1.5px solid rgba(243,242,236,.55);color:#F3F2EC !important}
+.ssa-btn-ghost:hover{background:rgba(243,242,236,.12)}
+.ssa-btn-lg{padding:15px 26px;font-size:16.5px}
+.ssa-hide-sm{display:none}
+@media(min-width:860px){.ssa-hide-sm{display:inline-flex}}
+
+/* ---------- hero ---------- */
+.ssa-hero{position:relative;background:var(--ssa-turf);color:var(--ssa-chalk);overflow:hidden}
+.ssa-hero::before{
+  content:"";position:absolute;inset:0;
+  background:
+    radial-gradient(900px 420px at 12% -10%, rgba(41,138,96,.55), transparent 65%),
+    repeating-linear-gradient(90deg, rgba(255,255,255,.035) 0 2px, transparent 2px 84px);
+  pointer-events:none;
+}
+/* chalk crease lines at the foot of the hero */
+.ssa-crease{position:absolute;left:0;right:0;bottom:0;height:120px;pointer-events:none;opacity:.5}
+.ssa-hero-in{position:relative;display:grid;gap:40px;padding:52px 0 64px}
+@media(min-width:960px){.ssa-hero-in{grid-template-columns:1.15fr .85fr;gap:56px;padding:76px 0 96px;align-items:start}}
+.ssa-kicker{display:inline-block;background:rgba(243,242,236,.12);border:1px solid rgba(243,242,236,.25);color:#CFE6DA;font-size:13.5px;font-weight:600;padding:6px 12px;border-radius:999px;margin-bottom:22px}
+.ssa-h1{font-size:clamp(38px,7.4vw,66px);margin:0 0 20px}
+.ssa-h1 em{font-style:normal;color:#F0B429}
+.ssa-lede{font-size:clamp(17px,2.2vw,19.5px);color:#C6DDD1;max-width:36ch;margin:0 0 30px}
+.ssa-hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:34px}
+.ssa-facts{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:rgba(243,242,236,.18);border:1px solid rgba(243,242,236,.18);max-width:520px}
+@media(min-width:620px){.ssa-facts{grid-template-columns:repeat(4,1fr)}}
+.ssa-fact{background:var(--ssa-turf);padding:14px 14px 16px}
+.ssa-fact b{display:block;font-family:"Archivo Black",sans-serif;font-size:24px;line-height:1.1;color:#fff}
+.ssa-fact span{font-size:13px;color:#A7C6B7;line-height:1.35;display:block;margin-top:3px}
+
+/* ---------- lead form ---------- */
+.ssa-form{background:var(--ssa-chalk);color:#122A21;border-radius:6px;padding:26px 24px 24px;box-shadow:0 18px 40px rgba(0,0,0,.28);border-top:5px solid var(--ssa-cherry)}
+.ssa-form h2{font-family:"Archivo Black",sans-serif;font-size:23px;margin:0 0 6px;line-height:1.15}
+.ssa-form p.ssa-sub{font-size:14.5px;color:#4C6259;margin:0 0 18px}
+.ssa-field{margin-bottom:14px}
+.ssa-field label{display:block;font-size:13.5px;font-weight:600;color:#33544a;margin-bottom:5px}
+.ssa-field input,.ssa-field select{
+  width:100%;font-family:inherit;font-size:16px;color:#122A21;background:#fff;
+  border:1.5px solid #CFCFC2;border-radius:4px;padding:11px 12px;
+}
+.ssa-field input:focus,.ssa-field select:focus{border-color:var(--ssa-grass);outline:none;box-shadow:0 0 0 3px rgba(27,107,73,.18)}
+.ssa-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.ssa-form .ssa-btn{width:100%;margin-top:6px}
+.ssa-fineprint{font-size:12.5px;color:#5C7268;margin:12px 0 0;text-align:center}
+.ssa-err{display:none;font-size:13px;color:#A81D26;font-weight:600;margin:4px 0 0}
+
+/* ---------- generic sections ---------- */
+.ssa-sec{padding:64px 0}
+.ssa-sec-tight{padding:48px 0}
+.ssa-sec-alt{background:var(--ssa-card);border-top:1px solid var(--ssa-line);border-bottom:1px solid var(--ssa-line)}
+.ssa-h2{font-family:"Archivo Black",sans-serif;font-size:clamp(27px,4.4vw,40px);line-height:1.08;margin:0 0 14px;max-width:20ch}
+.ssa-intro{color:var(--ssa-muted);font-size:17.5px;max-width:58ch;margin:0 0 36px}
+
+/* programmes */
+.ssa-progs{display:grid;gap:20px}
+@media(min-width:840px){.ssa-progs{grid-template-columns:repeat(3,1fr)}}
+.ssa-prog{background:var(--ssa-card);border:1px solid var(--ssa-line);border-top:4px solid var(--ssa-grass);padding:24px 22px 26px;display:flex;flex-direction:column}
+.ssa-prog:nth-child(2){border-top-color:var(--ssa-cherry)}
+.ssa-prog:nth-child(3){border-top-color:#0C3B2A}
+.ssa-age{font-family:"Archivo Black",sans-serif;font-size:15px;color:var(--ssa-cherry-ink);margin-bottom:8px}
+.ssa-prog h3{font-family:"Archivo Black",sans-serif;font-size:22px;margin:0 0 10px;line-height:1.15}
+.ssa-prog p{color:var(--ssa-muted);font-size:15.5px;margin:0 0 16px}
+.ssa-list{list-style:none;padding:0;margin:0 0 20px;font-size:15.5px}
+.ssa-list li{padding:8px 0 8px 26px;position:relative;border-top:1px solid var(--ssa-line)}
+.ssa-list li::before{content:"";position:absolute;left:4px;top:15px;width:9px;height:9px;border-radius:50%;background:var(--ssa-cherry)}
+.ssa-fee{margin-top:auto;padding-top:14px;border-top:1px solid var(--ssa-line);font-size:15px;color:var(--ssa-muted)}
+.ssa-fee b{font-family:"Archivo Black",sans-serif;font-size:21px;color:var(--ssa-ink);display:block}
+
+/* timetable */
+.ssa-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--ssa-line);background:var(--ssa-card)}
+table.ssa-tt{border-collapse:collapse;width:100%;min-width:640px;font-size:15.5px}
+.ssa-tt th,.ssa-tt td{text-align:left;padding:13px 16px;border-bottom:1px solid var(--ssa-line)}
+.ssa-tt thead th{background:var(--ssa-turf);color:#F3F2EC;font-weight:600;font-size:14.5px;border-bottom:0}
+.ssa-tt tbody tr:last-child td{border-bottom:0}
+.ssa-tt td:first-child{font-weight:700;white-space:nowrap}
+.ssa-tag{display:inline-block;font-size:13px;font-weight:600;color:var(--ssa-cherry-ink);border:1px solid currentColor;border-radius:3px;padding:1px 7px;margin-left:8px;vertical-align:1px}
+
+/* session timeline */
+.ssa-session{display:grid;gap:0;border-left:2px solid var(--ssa-line);margin-top:8px}
+.ssa-step{position:relative;padding:0 0 26px 26px}
+.ssa-step::before{content:"";position:absolute;left:-7px;top:7px;width:12px;height:12px;border-radius:50%;background:var(--ssa-grass);border:3px solid var(--ssa-paper)}
+.ssa-step time{font-family:"Archivo Black",sans-serif;font-size:14px;color:var(--ssa-cherry-ink);display:block;margin-bottom:2px}
+.ssa-step h3{font-size:18px;margin:0 0 4px;font-weight:700}
+.ssa-step p{margin:0;color:var(--ssa-muted);font-size:15.5px;max-width:52ch}
+.ssa-split{display:grid;gap:44px}
+@media(min-width:900px){.ssa-split{grid-template-columns:1fr 1fr;gap:64px;align-items:start}}
+
+/* facilities */
+.ssa-fac{display:grid;gap:14px;grid-template-columns:repeat(2,1fr)}
+@media(min-width:700px){.ssa-fac{grid-template-columns:repeat(3,1fr)}}
+.ssa-fac div{border:1px solid var(--ssa-line);background:var(--ssa-card);padding:16px 16px 18px}
+.ssa-fac b{display:block;font-size:16.5px;margin-bottom:3px}
+.ssa-fac span{font-size:14.5px;color:var(--ssa-muted);line-height:1.45}
+
+/* coach */
+.ssa-coach{background:var(--ssa-turf);color:#F3F2EC;padding:30px 28px;border-radius:6px}
+.ssa-coach h3{font-family:"Archivo Black",sans-serif;font-size:24px;margin:0 0 4px}
+.ssa-coach .ssa-role{color:#F0B429;font-weight:600;font-size:15px;margin:0 0 16px}
+.ssa-coach p{color:#C6DDD1;font-size:15.5px;margin:0 0 14px}
+.ssa-coach ul{margin:0;padding-left:20px;color:#C6DDD1;font-size:15.5px}
+.ssa-coach li{margin-bottom:6px}
+
+/* testimonials */
+.ssa-quotes{display:grid;gap:20px}
+@media(min-width:820px){.ssa-quotes{grid-template-columns:repeat(3,1fr)}}
+.ssa-quote{background:var(--ssa-card);border:1px solid var(--ssa-line);padding:24px 22px}
+.ssa-quote p{margin:0 0 16px;font-size:16px}
+.ssa-quote footer{font-size:14px;color:var(--ssa-muted)}
+.ssa-quote footer b{color:var(--ssa-ink);display:block;font-size:15px}
+
+/* faq */
+details.ssa-faq{border-bottom:1px solid var(--ssa-line);padding:4px 0}
+details.ssa-faq summary{cursor:pointer;list-style:none;padding:16px 36px 16px 0;font-weight:700;font-size:17px;position:relative}
+details.ssa-faq summary::-webkit-details-marker{display:none}
+details.ssa-faq summary::after{content:"+";position:absolute;right:6px;top:14px;font-size:24px;font-weight:400;color:var(--ssa-cherry-ink);line-height:1}
+details.ssa-faq[open] summary::after{content:"\2013"}
+details.ssa-faq p{margin:0 0 18px;color:var(--ssa-muted);font-size:16px;max-width:70ch}
+
+/* age notice */
+.ssa-notice{
+  background:var(--ssa-turf);color:#CFE6DA;text-align:center;
+  padding:16px 22px;font-size:15px;font-weight:600;
+  border-top:3px solid var(--ssa-cherry);
+}
+.ssa-notice b{color:#F0B429}
+
+/* closing cta */
+.ssa-close{background:var(--ssa-cherry);color:#fff;text-align:center;padding:62px 0}
+.ssa-close h2{font-family:"Archivo Black",sans-serif;font-size:clamp(28px,4.6vw,42px);margin:0 0 12px;line-height:1.1}
+.ssa-close p{max-width:46ch;margin:0 auto 26px;color:#FBE2E3;font-size:17.5px}
+.ssa-close .ssa-btn{background:#fff;color:var(--ssa-cherry) !important}
+.ssa-close .ssa-btn:hover{background:#F3F2EC}
+.ssa-close .ssa-btn-ghost{background:transparent;color:#fff !important;border-color:rgba(255,255,255,.6)}
+.ssa-close .ssa-btn-ghost:hover{background:rgba(255,255,255,.14)}
+.ssa-close .ssa-hero-cta{justify-content:center;margin-bottom:0}
+
+/* footer */
+.ssa-foot{background:var(--ssa-turf);color:#A7C6B7;padding:46px 0 34px;font-size:15px}
+.ssa-foot-grid{display:grid;gap:26px}
+@media(min-width:760px){.ssa-foot-grid{grid-template-columns:1.4fr 1fr 1fr}}
+.ssa-foot h4{color:#fff;font-size:15px;margin:0 0 10px;font-weight:700}
+.ssa-foot a{color:#CFE6DA;text-decoration:none}
+.ssa-foot a:hover{text-decoration:underline}
+.ssa-foot p{margin:0 0 8px;line-height:1.55}
+.ssa-copy{border-top:1px solid rgba(255,255,255,.14);margin-top:32px;padding-top:18px;font-size:13.5px;color:#8FB3A2}
+
+/* whatsapp float */
+.ssa-float{
+  position:fixed;right:16px;bottom:16px;z-index:60;
+  display:inline-flex;align-items:center;gap:9px;
+  background:#1EA34D;color:#fff !important;text-decoration:none;font-weight:700;font-size:15px;
+  padding:13px 18px;border-radius:999px;box-shadow:0 8px 24px rgba(0,0,0,.28);
+}
+.ssa-float:hover{background:#17853E}
+.ssa-float svg{width:19px;height:19px;fill:currentColor}
+
+/* one page-load reveal, motion-safe */
+@media (prefers-reduced-motion: no-preference){
+  .ssa-reveal{opacity:0;transform:translateY(14px);animation:ssaIn .7s cubic-bezier(.2,.7,.3,1) forwards}
+  .ssa-reveal:nth-child(2){animation-delay:.12s}
+  @keyframes ssaIn{to{opacity:1;transform:none}}
+}
+</style>
+</head>
+<body>
+
+<header class="ssa-bar">
+  <div class="ssa-wrap ssa-bar-in">
+    <a class="ssa-logo" href="#top">
+      <span class="ssa-ball" aria-hidden="true"></span>
+      <span><b>SS Academy</b><span>Adult cricket coaching, Delhi</span></span>
+    </a>
+    <a class="ssa-tel ssa-hide-sm" href="tel:+919302304139">+91 93023 04139</a>
+    <a class="ssa-btn ssa-wa" href="https://wa.me/919302304139?text=I%20want%20to%20sign%20up" target="_blank" rel="noopener">Book a free trial</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="ssa-hero">
+    <div class="ssa-wrap ssa-hero-in">
+      <div class="ssa-reveal">
+        <span class="ssa-kicker">Adults only, 18 and above</span>
+        <h1 class="ssa-h1 ssa-display">Play more cricket.<br>Guess less about <em>why</em> you got out.</h1>
+        <p class="ssa-lede">Coaching for working adults who still play. Small net batches before and after office, video review every session, and real match time on Sunday.</p>
+        <div class="ssa-hero-cta">
+          <a class="ssa-btn ssa-btn-lg ssa-wa" href="https://wa.me/919302304139?text=I%20want%20to%20sign%20up" target="_blank" rel="noopener">Book a free trial session</a>
+          <a class="ssa-btn ssa-btn-lg ssa-btn-ghost" href="#programs">See the batches</a>
+        </div>
+        <div class="ssa-facts">
+          <div class="ssa-fact"><b>12</b><span>players per net batch</span></div>
+          <div class="ssa-fact"><b>6</b><span>practice wickets, turf and matting</span></div>
+          <div class="ssa-fact"><b>30+</b><span>players in Delhi league sides</span></div>
+          <div class="ssa-fact"><b>11</b><span>years running in Delhi</span></div>
+        </div>
+      </div>
+
+      <div class="ssa-form ssa-reveal" id="trial">
+        <h2>Book a free trial session</h2>
+        <p class="ssa-sub">Fill this in and we will confirm your slot on WhatsApp, usually within an hour.</p>
+        <form id="ssaLeadForm" novalidate>
+          <div class="ssa-field">
+            <label for="ssaName">Your name</label>
+            <input id="ssaName" name="name" type="text" autocomplete="name" placeholder="Rohit Sharma" required>
+          </div>
+          <div class="ssa-row">
+            <div class="ssa-field">
+              <label for="ssaAge">Age</label>
+              <input id="ssaAge" name="age" type="number" min="18" max="70" placeholder="26" required>
+              <p class="ssa-err" id="ssaAgeErr">We coach adults 18 and above only.</p>
+            </div>
+            <div class="ssa-field">
+              <label for="ssaPhone">Phone</label>
+              <input id="ssaPhone" name="phone" type="tel" inputmode="numeric" autocomplete="tel" placeholder="98765 43210" required>
+            </div>
+          </div>
+          <div class="ssa-field">
+            <label for="ssaSkill">You play mainly as</label>
+            <select id="ssaSkill" name="skill">
+              <option>Batter</option>
+              <option>Fast bowler</option>
+              <option>Spinner</option>
+              <option>All rounder</option>
+              <option>Wicketkeeper</option>
+              <option>Coming back after a long break</option>
+            </select>
+          </div>
+          <div class="ssa-field">
+            <label for="ssaBatch">Preferred timing</label>
+            <select id="ssaBatch" name="batch">
+              <option>Before work, 6:00 to 8:00 am</option>
+              <option>After work, 7:00 to 9:00 pm</option>
+              <option>Weekend only</option>
+            </select>
+          </div>
+          <button class="ssa-btn" type="submit">Send on WhatsApp</button>
+          <p class="ssa-fineprint">No fee for the trial. Bring shoes and a water bottle, we will give you the rest.</p>
+        </form>
+      </div>
+    </div>
+    <svg class="ssa-crease" viewBox="0 0 1200 120" preserveAspectRatio="none" aria-hidden="true">
+      <g stroke="#F3F2EC" stroke-width="2" fill="none" opacity=".65">
+        <line x1="0" y1="86" x2="1200" y2="86"/>
+        <line x1="430" y1="46" x2="430" y2="120"/>
+        <line x1="770" y1="46" x2="770" y2="120"/>
+        <line x1="430" y1="46" x2="770" y2="46"/>
+      </g>
+    </svg>
+  </section>
+
+  <div class="ssa-notice">
+    SS Academy is an <b>adults only</b> academy. We coach players aged 18 and above, and do not run junior or school batches.
+  </div>
+
+  <section class="ssa-sec" id="programs">
+    <div class="ssa-wrap">
+      <h2 class="ssa-h2">Three batches, grouped by where your game is now</h2>
+      <p class="ssa-intro">Every new player gets an assessment net before joining a batch. We group by current standard and how much load your body can take, not by how long you have been playing.</p>
+      <div class="ssa-progs">
+
+        <article class="ssa-prog">
+          <div class="ssa-age">New or returning</div>
+          <h3>Weekend</h3>
+          <p>For adults who play the odd office or society match, or are picking the game back up after years away.</p>
+          <ul class="ssa-list">
+            <li>2 sessions a week, 2 hours each</li>
+            <li>Technique rebuilt from grip and stance up</li>
+            <li>Load managed so you are not wrecked on Monday</li>
+            <li>Friendly matches once a month</li>
+          </ul>
+          <div class="ssa-fee"><b>Rs 3,500 / month</b>Ground charges included</div>
+        </article>
+
+        <article class="ssa-prog">
+          <div class="ssa-age">League regulars</div>
+          <h3>Club</h3>
+          <p>For players already turning out for a club or corporate side who want to fix one specific part of their game.</p>
+          <ul class="ssa-list">
+            <li>3 sessions a week, 2 hours each</li>
+            <li>Bowling machine and side arm work</li>
+            <li>Video review of every net, sent the same evening</li>
+            <li>Sunday league matches, 30 overs a side</li>
+          </ul>
+          <div class="ssa-fee"><b>Rs 4,800 / month</b>Includes match fees and umpiring</div>
+        </article>
+
+        <article class="ssa-prog">
+          <div class="ssa-age">Open age trials</div>
+          <h3>Performance</h3>
+          <p>For first team and open age players preparing for district or state trials who need their numbers to move.</p>
+          <ul class="ssa-list">
+            <li>5 sessions a week plus strength and conditioning</li>
+            <li>Individual season plan with targets</li>
+            <li>Match data tracked innings by innings</li>
+            <li>Trial preparation and selector contacts</li>
+          </ul>
+          <div class="ssa-fee"><b>Rs 6,500 / month</b>Personal coaching available on request</div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="ssa-sec ssa-sec-alt">
+    <div class="ssa-wrap">
+      <h2 class="ssa-h2">A week at the ground</h2>
+      <p class="ssa-intro">Batches run six days a week, built around office hours. Sunday is match day, and the ground is open from first light.</p>
+      <div class="ssa-scroll">
+        <table class="ssa-tt">
+          <thead>
+            <tr><th scope="col">Day</th><th scope="col">6:00 to 8:00 am</th><th scope="col">7:00 to 9:00 pm</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Monday</td><td>Performance nets</td><td>Weekend batch <span class="ssa-tag">technique</span></td></tr>
+            <tr><td>Tuesday</td><td>Club nets</td><td>Performance, fielding block</td></tr>
+            <tr><td>Wednesday</td><td>Performance, bowling machine</td><td>Club nets</td></tr>
+            <tr><td>Thursday</td><td>Club nets</td><td>Performance, strength work</td></tr>
+            <tr><td>Friday</td><td>Open nets, all batches</td><td>Weekend batch <span class="ssa-tag">technique</span></td></tr>
+            <tr><td>Saturday</td><td>Match simulation</td><td>Video review and one to one</td></tr>
+            <tr><td>Sunday</td><td colspan="2">League matches from 7:30 am</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="ssa-sec">
+    <div class="ssa-wrap ssa-split">
+      <div>
+        <h2 class="ssa-h2">What two hours actually looks like</h2>
+        <p class="ssa-intro">No standing in a queue behind fifteen other players. Every session follows the same shape so progress is easy to measure.</p>
+        <div class="ssa-session">
+          <div class="ssa-step">
+            <time>First 15 minutes</time>
+            <h3>Warm up and movement</h3>
+            <p>Running, mobility and throwing. Shoulders, back and hamstrings get looked after before anyone picks up a bat, which matters more every year past 25.</p>
+          </div>
+          <div class="ssa-step">
+            <time>Next 30 minutes</time>
+            <h3>Skill block</h3>
+            <p>One technical focus for the week, drilled in small groups. Batters work on a shot, bowlers on a length.</p>
+          </div>
+          <div class="ssa-step">
+            <time>Next 45 minutes</time>
+            <h3>Nets</h3>
+            <p>Every player bats and bowls. Coaches move between wickets, and the camera runs for the review later.</p>
+          </div>
+          <div class="ssa-step">
+            <time>Next 20 minutes</time>
+            <h3>Match scenario</h3>
+            <p>Chase 24 off two overs, or bowl at a set field. Pressure practice, because that is where technique breaks.</p>
+          </div>
+          <div class="ssa-step" style="padding-bottom:0">
+            <time>Last 10 minutes</time>
+            <h3>Review and homework</h3>
+            <p>What worked, what did not, and one thing to work on before the next session. Clips go out on WhatsApp the same evening.</p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="ssa-coach">
+          <h3>Coach Sandeep Singh</h3>
+          <p class="ssa-role">Head coach and founder</p>
+          <p>Former Delhi Ranji probable, coaching full time since 2015. Runs the Performance batch himself and watches every Sunday match from the boundary with a notebook.</p>
+          <ul>
+            <li>BCCI Level 2 certified coach</li>
+            <li>11 seasons of club cricket in Delhi</li>
+            <li>Coached 30 plus players into Delhi league first teams</li>
+          </ul>
+        </div>
+        <div style="margin-top:22px">
+          <h3 style="font-family:'Archivo Black',sans-serif;font-size:20px;margin:0 0 14px">The ground</h3>
+          <div class="ssa-fac">
+            <div><b>6 nets</b><span>Four matting, two turf wickets</span></div>
+            <div><b>Bowling machine</b><span>Pace and spin settings</span></div>
+            <div><b>Floodlights</b><span>Evening batches run till 9 pm</span></div>
+            <div><b>Full ground</b><span>Marked boundary and sightscreens</span></div>
+            <div><b>Video setup</b><span>Side on and front on angles</span></div>
+            <div><b>Kit store</b><span>Loaner gear for trial players</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ssa-sec ssa-sec-alt">
+    <div class="ssa-wrap">
+      <h2 class="ssa-h2">What our players say</h2>
+      <div class="ssa-quotes">
+        <div class="ssa-quote">
+          <p>I had not held a bat since college and assumed that ship had sailed. Eight months later I am opening for my corporate side. The 6 am batch means it costs me nothing at work.</p>
+          <footer><b>Ritu Malhotra</b>Club batch, plays corporate league</footer>
+        </div>
+        <div class="ssa-quote">
+          <p>Coach Sandeep told me straight that my run up was the problem, not my action. No flattery. My economy rate in the league has dropped by two runs an over since.</p>
+          <footer><b>Anil Kumar</b>Performance batch, district probables</footer>
+        </div>
+        <div class="ssa-quote">
+          <p>The Sunday matches are the best part. Real overs, real umpires and a proper scorecard. Nets are fine, but you only find out what you have fixed in a match.</p>
+          <footer><b>Farhan Qureshi</b>Weekend batch, back after 11 years</footer>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ssa-sec">
+    <div class="ssa-wrap" style="max-width:820px">
+      <h2 class="ssa-h2">Questions we get asked first</h2>
+      <details class="ssa-faq" open>
+        <summary>Do you coach children?</summary>
+        <p>No. SS Academy is licensed for adult coaching only, so every batch is 18 and above. We are not able to take junior or school age players, and we do not keep a waiting list for them.</p>
+      </details>
+      <details class="ssa-faq">
+        <summary>I have not played properly in ten years. Am I too far gone?</summary>
+        <p>No, and you will not be the only one in the net. The Weekend batch is built for exactly this. We rebuild the basics and manage the load so you are not limping into the office the next morning.</p>
+      </details>
+      <details class="ssa-faq">
+        <summary>Do I need my own kit before joining?</summary>
+        <p>No. Bring sports shoes and a water bottle for the trial and the first few weeks. We keep loaner pads, gloves and helmets at the ground. Once you settle into a batch we will tell you exactly what to buy and what to skip.</p>
+      </details>
+      <details class="ssa-faq">
+        <summary>What is the coach to player ratio?</summary>
+        <p>Twelve players per net batch with two coaches, and an extra fielding coach on Saturdays. We cap batches rather than adding more players to a session.</p>
+      </details>
+      <details class="ssa-faq">
+        <summary>Can I join mid season?</summary>
+        <p>Yes. Admissions stay open all year as long as a batch has space. Fees are charged monthly from the date of joining, with no admission or annual charge.</p>
+      </details>
+      <details class="ssa-faq">
+        <summary>Will this fit around a full time job?</summary>
+        <p>That is what the timetable is built for. The morning batch finishes by 8 am and the evening batch starts at 7 pm. If work takes you out of town, tell us and we will hold your slot rather than charge you for sessions you cannot attend.</p>
+      </details>
+      <details class="ssa-faq">
+        <summary>Do you help with league and trial selection?</summary>
+        <p>We do. Performance batch players get a season plan built around trial dates, and we share match data and coach references with selectors when asked.</p>
+      </details>
+      <details class="ssa-faq">
+        <summary>What happens if it rains?</summary>
+        <p>Sessions move to indoor drills and video work, or we add a make up slot the same week. You will get a WhatsApp message by 5 am for morning batches and by 4 pm for evening ones.</p>
+      </details>
+    </div>
+  </section>
+
+  <section class="ssa-close">
+    <div class="ssa-wrap">
+      <h2>Come and bat for a session. The trial is free.</h2>
+      <p>Pick a slot that suits your week, come down, and see how the batch runs before you decide anything.</p>
+      <div class="ssa-hero-cta">
+        <a class="ssa-btn ssa-btn-lg ssa-wa" href="https://wa.me/919302304139?text=I%20want%20to%20sign%20up" target="_blank" rel="noopener">Book a free trial</a>
+        <a class="ssa-btn ssa-btn-lg ssa-btn-ghost" href="tel:+919302304139">Call +91 93023 04139</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="ssa-foot">
+  <div class="ssa-wrap">
+    <div class="ssa-foot-grid">
+      <div>
+        <a class="ssa-logo" href="#top" style="margin-bottom:12px"><span class="ssa-ball" aria-hidden="true"></span><span><b style="color:#fff">SS Academy</b><span>Adult cricket coaching, Delhi</span></span></a>
+        <p>Year round cricket coaching for adults 18 and above. Turf and matting nets, video analysis and Sunday league matches.</p>
+      </div>
+      <div>
+        <h4>Ground</h4>
+        <p>Ground No. 4, Sector 12<br>Dwarka, New Delhi 110078</p>
+        <p><a href="https://www.google.com/maps/search/?api=1&amp;query=Ground+No.+4%2C+Sector+12%2C+Dwarka%2C+New+Delhi+110078" target="_blank" rel="noopener">Get directions</a></p>
+      </div>
+      <div>
+        <h4>Talk to us</h4>
+        <p><a href="tel:+919302304139">+91 93023 04139</a></p>
+        <p><a href="mailto:hello@ssacademy.in">hello@ssacademy.in</a></p>
+        <p>Office hours 9 am to 7 pm</p>
+      </div>
+    </div>
+    <div class="ssa-copy">© <span id="ssaYear">2026</span> SS Academy. Adult coaching only, 18 and above. All rights reserved.</div>
+  </div>
+</footer>
+
+<a class="ssa-float ssa-wa" id="ssaFloat" href="https://wa.me/919302304139?text=I%20want%20to%20sign%20up" target="_blank" rel="noopener">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.15h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.22 8.22 0 0 1-1.26-4.38c0-4.54 3.7-8.23 8.25-8.23 2.2 0 4.27.86 5.83 2.42a8.19 8.19 0 0 1 2.41 5.82c0 4.54-3.7 8.23-8.24 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.79.97-.14.16-.29.18-.54.06-.25-.13-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.43.13-.15.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.87.85-.87 2.07s.89 2.4 1.02 2.57c.12.16 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.47-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.1-.22-.16-.47-.28z"/></svg>
+  WhatsApp us
+</a>
+
+<script>
+(function(){
+  var WA_NUMBER = "919302304139"; // academy WhatsApp number, country code first, no plus
+  var WA_MSG    = "I want to sign up"; // prefilled WhatsApp message on every CTA
+  var MIN_AGE   = 18; // adults only, licensing requirement
+
+  document.getElementById("ssaYear").textContent = new Date().getFullYear();
+
+  /* keep every WhatsApp button in sync with the values above */
+  var waLink = "https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent(WA_MSG);
+  Array.prototype.forEach.call(document.querySelectorAll(".ssa-wa"), function(a){
+    a.setAttribute("href", waLink);
+    a.setAttribute("target", "_blank");
+    a.setAttribute("rel", "noopener");
+  });
+
+  var form   = document.getElementById("ssaLeadForm");
+  var ageErr = document.getElementById("ssaAgeErr");
+
+  form.addEventListener("submit", function(e){
+    e.preventDefault();
+    var name  = document.getElementById("ssaName");
+    var age   = document.getElementById("ssaAge");
+    var phone = document.getElementById("ssaPhone");
+
+    ageErr.style.display = "none";
+
+    if(!name.value.trim()){ name.focus(); return; }
+    if(!age.value.trim()){ age.focus(); return; }
+    if(parseInt(age.value, 10) < MIN_AGE){
+      ageErr.style.display = "block";
+      age.focus();
+      return;
+    }
+    if(phone.value.replace(/\D/g,"").length < 10){ phone.focus(); return; }
+
+    var msg = WA_MSG
+      + "\nName: " + name.value.trim()
+      + "\nAge: " + age.value.trim()
+      + "\nPhone: " + phone.value.trim()
+      + "\nPlays as: " + document.getElementById("ssaSkill").value
+      + "\nPreferred timing: " + document.getElementById("ssaBatch").value;
+
+    window.open("https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent(msg), "_blank", "noopener");
+  });
+})();
+</script>
+
+</body>
+</html>
